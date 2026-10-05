@@ -1,0 +1,72 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            t3un6sk17vocyx638fva8fs4sy19iflc:
+                args:
+                    - --part
+                    - head
+                    - --epochs
+                    - "3"
+                    - --batch_size
+                    - "16"
+                codePath: train_ijepa.py
+                codePathLocal: train_ijepa.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "1000186310656"
+                        used: "856234532864"
+                email: VRSLNZ02H25B428F@studium.unict.it
+                executable: C:\Users\xolor\Miniconda3\envs\TesiReId\python.exe
+                gpu: NVIDIA GeForce RTX 4060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 3072
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4060 Laptop GPU
+                      uuid: GPU-d5ca775f-f308-eed8-434a-46c059fb7722
+                host: Lore-Laptop
+                memory:
+                    total: "16366571520"
+                os: Windows-10-10.0.26200-SP0
+                program: D:\melops\Tesi\train_ijepa.py
+                python: CPython 3.10.20
+                root: D:\melops\Tesi
+                startedAt: "2026-09-30T09:31:03.478994Z"
+                writerId: t3un6sk17vocyx638fva8fs4sy19iflc
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 41
+                - 49
+                - 63
+            "2":
+                - 1
+                - 41
+                - 49
+                - 63
+            "3":
+                - 13
+                - 16
+            "4": 3.10.20
+            "5": 0.30.0
+            "8":
+                - 3
+            "12": 0.30.0
+            "13": windows-amd64
+architecture:
+    value: I-JEPA ViT-B/16
+batch_size:
+    value: 16
+dataset_part:
+    value: head
+epochs:
+    value: 3
+learning_rate:
+    value: 0.00015

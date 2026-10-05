@@ -1,0 +1,278 @@
+2026-09-30 20:00:49,005 INFO    MainThread:32484 [wandb_setup.py:_flush():81] Current SDK version is 0.30.0
+2026-09-30 20:00:49,005 INFO    MainThread:32484 [wandb_setup.py:_flush():81] Configure stats pid to 32484
+2026-09-30 20:00:49,005 INFO    MainThread:32484 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-09-30 20:00:49,005 INFO    MainThread:32484 [wandb_init.py:setup_run_log_directory():739] Logging user logs to D:\melops\Tesi\wandb\run-20260930_200048-lanna1c0\logs\debug.log
+2026-09-30 20:00:49,005 INFO    MainThread:32484 [wandb_init.py:setup_run_log_directory():740] Logging internal logs to D:\melops\Tesi\wandb\run-20260930_200048-lanna1c0\logs\debug-internal.log
+2026-09-30 20:00:49,006 INFO    MainThread:32484 [wandb_init.py:init():783] calling init triggers
+2026-09-30 20:00:49,006 INFO    MainThread:32484 [wandb_init.py:init():788] wandb.init called with sweep_config: {}
+config: {'architecture': 'I-JEPA + Linear Head', 'phase': 'fine-tuning', 'dataset_part': 'head', 'epochs': 20, 'batch_size': 32, 'learning_rate': 0.001, 'num_classes': 7712, 'freeze_backbone': False, 'source_checkpoint': 'runs\\run_008\\models\\ijepa_best.pth', '_wandb': {}}
+2026-09-30 20:00:49,006 INFO    MainThread:32484 [wandb_init.py:init():831] starting backend
+2026-09-30 20:00:49,006 INFO    MainThread:32484 [wandb_init.py:init():846] sending inform_init request
+2026-09-30 20:00:49,034 INFO    MainThread:32484 [wandb_init.py:init():851] backend started and connected
+2026-09-30 20:00:49,035 INFO    MainThread:32484 [wandb_init.py:init():921] updated telemetry
+2026-09-30 20:00:49,081 INFO    MainThread:32484 [wandb_init.py:init():944] communicating run to backend with 90.0 second timeout
+2026-09-30 20:00:50,256 INFO    MainThread:32484 [wandb_init.py:init():981] starting run threads in backend
+2026-09-30 20:00:53,212 INFO    MainThread:32484 [wandb_run.py:_console_start():2531] atexit reg
+2026-09-30 20:00:53,213 INFO    MainThread:32484 [wandb_run.py:_redirect():2381] redirect: wrap_raw
+2026-09-30 20:00:53,213 INFO    MainThread:32484 [wandb_run.py:_redirect():2450] Wrapping output streams.
+2026-09-30 20:00:53,213 INFO    MainThread:32484 [wandb_run.py:_redirect():2473] Redirects installed.
+2026-09-30 20:00:53,517 INFO    MainThread:32484 [wandb_init.py:init():1019] run started, returning control to user process
+2026-09-30 20:01:57,220 INFO    wandb-AsyncioManager-main:32484 [service_client.py:_forward_responses():122] [no run ID] Reached EOF.
+2026-09-30 20:01:57,221 INFO    wandb-AsyncioManager-main:32484 [mailbox.py:close():154] [no run ID] Closing mailbox, abandoning 2 handles.
+2026-09-30 20:01:57,221 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\run_messages.py", line 90, in loop
+    await asyncio_compat.race(
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_compat.py", line 279, in race
+    async with open_task_group(race=True) as tg:
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_compat.py", line 241, in open_task_group
+    await task_group._wait_all(race=race, timeout=exit_timeout)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_compat.py", line 181, in _wait_all
+    raise exc
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\run_messages.py", line 113, in _print_all
+    result = await handle.wait_async(timeout=None)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\mailbox\mailbox_handle.py", line 127, in wait_async
+    response = await self._handle.wait_async(timeout=timeout)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\mailbox\response_handle.py", line 123, in wait_async
+    raise HandleAbandonedError()
+wandb.sdk.mailbox.mailbox_handle.HandleAbandonedError
+2026-09-30 20:01:58,470 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,474 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,475 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,476 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,476 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,477 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,478 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,478 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,479 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,480 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,480 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,481 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,491 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-30 20:01:58,501 ERROR   wandb-AsyncioManager-main:32484 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 195, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 42, in publish
+    await self._send_server_request(request)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 75, in _send_server_request
+    raise self._broken_exc.with_traceback(self._broken_tb)
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 84, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\site-packages\wandb\sdk\lib\service\service_client.py", line 92, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\xolor\Miniconda3\envs\TesiReId\lib\asyncio\streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

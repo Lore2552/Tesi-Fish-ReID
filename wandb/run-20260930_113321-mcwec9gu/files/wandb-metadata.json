@@ -1,0 +1,44 @@
+{
+  "os":  "Windows-10-10.0.26200-SP0",
+  "python":  "CPython 3.10.20",
+  "startedAt":  "2026-09-30T09:33:21.806452Z",
+  "args":  [
+    "--part",
+    "head",
+    "--epochs",
+    "3",
+    "--batch_size",
+    "16"
+  ],
+  "program":  "D:\\melops\\Tesi\\train_ijepa.py",
+  "codePath":  "train_ijepa.py",
+  "codePathLocal":  "train_ijepa.py",
+  "email":  "VRSLNZ02H25B428F@studium.unict.it",
+  "root":  "D:\\melops\\Tesi",
+  "host":  "Lore-Laptop",
+  "executable":  "C:\\Users\\xolor\\Miniconda3\\envs\\TesiReId\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1000186310656",
+      "used":  "856234569728"
+    }
+  },
+  "memory":  {
+    "total":  "16366571520"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal":  "8585740288",
+      "cudaCores":  3072,
+      "architecture":  "Ada",
+      "uuid":  "GPU-d5ca775f-f308-eed8-434a-46c059fb7722"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "97il71qro3asd6jdx5rhgo1la6sxa3rs"
+}

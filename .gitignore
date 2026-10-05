@@ -1,0 +1,26 @@
+﻿# Python e Ambiente
+__pycache__/
+*.py[cod]
+*.class
+.venv/
+venv/
+env/
+.env
+
+# Dati e Modelli (File pesanti)
+dataset/
+*.pth
+*.pt
+Checkpoints/
+runs/
+RisultatiHeatMap/
+*.zip
+
+# File di grandi dimensioni o temporanei
+*.pdf
+verifica_identita.png
+
+# Editor
+.vscode/
+.idea/
+.DS_Store

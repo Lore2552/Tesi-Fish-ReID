@@ -1,0 +1,86 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            dfqy5ifmdjurjj130bqmo8sul33s4i5g:
+                args:
+                    - --run
+                    - "12"
+                    - --part
+                    - head
+                    - --epochs
+                    - "20"
+                    - --lr
+                    - "1e-05"
+                    - --unfreeze_backbone
+                    - --wandb_name
+                    - Prova FineTuning 20 epochs
+                codePath: train_linear_probe.py
+                codePathLocal: train_linear_probe.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "1000186310656"
+                        used: "862522417152"
+                email: VRSLNZ02H25B428F@studium.unict.it
+                executable: C:\Users\xolor\Miniconda3\envs\TesiReId\python.exe
+                gpu: NVIDIA GeForce RTX 4060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 3072
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4060 Laptop GPU
+                      uuid: GPU-d5ca775f-f308-eed8-434a-46c059fb7722
+                host: Lore-Laptop
+                memory:
+                    total: "16366571520"
+                os: Windows-10-10.0.26200-SP0
+                program: D:\melops\Tesi\train_linear_probe.py
+                python: CPython 3.10.20
+                root: D:\melops\Tesi
+                startedAt: "2026-10-01T14:39:51.384303Z"
+                writerId: dfqy5ifmdjurjj130bqmo8sul33s4i5g
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 41
+                - 49
+                - 63
+            "2":
+                - 1
+                - 41
+                - 49
+                - 63
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.10.20
+            "5": 0.30.0
+            "8":
+                - 3
+            "12": 0.30.0
+            "13": windows-amd64
+architecture:
+    value: I-JEPA + Linear Head
+batch_size:
+    value: 32
+dataset_part:
+    value: head
+epochs:
+    value: 20
+freeze_backbone:
+    value: false
+learning_rate:
+    value: 1e-05
+num_classes:
+    value: 7712
+phase:
+    value: fine-tuning
+source_checkpoint:
+    value: runs\run_012\models\ijepa_best.pth

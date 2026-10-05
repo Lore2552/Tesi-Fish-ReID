@@ -1,0 +1,38 @@
+﻿=============================================================
+TODO PER DOMANI - Pipeline I-JEPA Melops Re-ID
+=============================================================
+
+Le run fatte finora:
+  - run_008: I-JEPA Pre-training (5 epoche, head, backbone salvato)
+  - run_009: Linear Probe con backbone CONGELATO (20 epoche)
+             Risultato: Rank-1 = 2.70%, mAP = 4.28%
+
+-------------------------------------------------------------
+STEP 1: Fine-tuning con backbone SBLOCCATO
+-------------------------------------------------------------
+python train_linear_probe.py --run 8 --part head --epochs 20 --unfreeze_backbone
+
+Questo creera' run_010.
+Il backbone verra' aggiornato con Cross-Entropy (NON contrastivo).
+
+-------------------------------------------------------------
+STEP 2: Valutazione Re-ID dopo fine-tuning
+-------------------------------------------------------------
+python evaluate_ijepa.py --run 10 --mode probe
+
+Confrontare i risultati con quelli della run_009 (2.70% Rank-1).
+Se il Rank-1 sale significativamente, il fine-tuning funziona.
+
+-------------------------------------------------------------
+STEP 3 (OPZIONALE): Se i risultati migliorano, ripetere
+il pre-training con piu' epoche per vedere se si sale ancora
+-------------------------------------------------------------
+python train_ijepa.py --part head --epochs 20 --batch_size 16
+
+Questo creera' run_011 (nuovo pretrain piu' lungo).
+Poi rifare fine-tuning e valutazione:
+
+python train_linear_probe.py --run 11 --part head --epochs 20 --unfreeze_backbone
+python evaluate_ijepa.py --run 12 --mode probe
+
+=============================================================
