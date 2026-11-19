@@ -1,8 +1,14 @@
-torch>=2.0.0
-torchvision
-timm
-opencv-python
-matplotlib
-scikit-learn
-numpy
-tqdm
+# Ambiente usato: conda env TesiReId (Python 3.10, CUDA 12.6)
+torch==2.14.0
+torchvision==0.29.0
+timm==1.0.28
+kornia==0.8.2
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2
+opencv-python==5.0.0.93
+pillow==12.3.0
+matplotlib==3.10.9
+tqdm==4.70.0
+# ALIKED + LightGlue (reid_locale.py, reid_aliked.py)
+lightglue @ git+https://github.com/cvg/LightGlue.git

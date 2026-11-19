@@ -1,4 +1,4 @@
-﻿# Python e Ambiente
+# Python e Ambiente
 __pycache__/
 *.py[cod]
 *.class
@@ -19,8 +19,34 @@ RisultatiHeatMap/
 # File di grandi dimensioni o temporanei
 *.pdf
 verifica_identita.png
+# Backup locali
+backup*/
+backup_20261119_200355/
 
 # Editor
 .vscode/
 .idea/
 .DS_Store
+
+# Cache memmap delle immagini ridimensionate (rigenerabile)
+cache/
+
+# Log di Weights & Biases (binari, con dati del computer)
+wandb/
+
+# File di servizio di LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Materiale vecchio, risultati e documenti (restano sul disco, non nel repository)
+OLD/
+OLD_Risultati/
+Risultati_ReID_Baseline_Prima_Prova/
+Risultati/
+docs/
+ScrittoFinale/
+METODO.md
+*.xlsx
