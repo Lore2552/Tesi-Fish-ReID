@@ -6,9 +6,9 @@ lr classi 1e-3. Checkpoint scelto sulla validation, test una volta alla fine.
 
 Opzioni principali:
   --classi catture   solo i (pesce, lato) fotografati in almeno due date
-  --prototipi        pesi delle classi inizializzati con la media degli embedding delle loro foto
+  --prototipi        pesi delle classi inizializzati con la media degli embedding delle loro foto (weight imprinting)
   --epoche_testa N   prime N epoche con il backbone congelato
-  --mescola          controllo di fuga: etichette permutate tra le foto
+  --mescola          etichette permutate tra le foto
 
     python arcface.py --init dinov2 --epochs 60 --ogni 4 --classi catture --prototipi --checkpointing
     output: runs/arcface_<init>[_catture][_prototipi][_<etichetta>]/
@@ -56,7 +56,7 @@ def main():
     ap.add_argument("--batch", type=int, default=128)
     ap.add_argument("--ogni", type=int, default=2)
     ap.add_argument("--passi_prova", type=int, default=0)
-    ap.add_argument("--checkpointing", action="store_true", help="gradient checkpointing del backbone (meno memoria)")
+    ap.add_argument("--checkpointing", action="store_true", help="gradient checkpointing del backbone")
     ap.add_argument("--classi", choices=["tutte", "catture"], default="tutte",
                     help="tutte: ogni (pesce, lato) di train; catture: solo quelli fotografati in almeno due date")
     ap.add_argument("--prototipi", action="store_true",
@@ -69,16 +69,17 @@ def main():
                     help="epoche iniziali con margine 0 (softmax normalizzata) prima che il margine cominci a salire")
     ap.add_argument("--lr_backbone", type=float, default=None, help="default: 5e-5 da DINOv2, 5e-4 da zero")
     ap.add_argument("--clip", type=float, default=0.0, help="norma massima del gradiente (0 = nessun limite)")
+    ap.add_argument("--seme", type=int, default=0, help="seme del training (ordine dei batch, ritagli, pesi)")
     ap.add_argument("--etichetta", default="", help="suffisso della cartella di output")
     ap.add_argument("--epoche_testa", type=int, default=0,
                     help="LP-FT: nelle prime N epoche il backbone e' congelato e si allena solo la testa")
     ap.add_argument("--mescola", action="store_true",
-                    help="controllo di fuga: etichette permutate a caso tra le foto (le classi non sono piu' pesci)")
+                    help="etichette permutate a caso tra le foto (le classi non sono piu' pesci)")
     ap.add_argument("--da_backbone", default="",
                     help="checkpoint (chiave 'backbone') da cui partire, es. runs/lejepa_multivista_zero/migliore.pth; con --init zero")
     args = ap.parse_args()
     sveglio()
-    torch.manual_seed(0)
+    torch.manual_seed(args.seme)
     device = torch.device("cuda")
     out_dir = os.path.join("runs", f"arcface_{args.init}" + ("_catture" if args.classi == "catture" else "")
                            + ("_prototipi" if args.prototipi else "") + (f"_{args.etichetta}" if args.etichetta else ""))
